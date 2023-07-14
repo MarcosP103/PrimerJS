@@ -4,18 +4,24 @@ alert ("Gracias " + nombre.toUpperCase()+ "!")
 alert ("Ahora te voy a pedir que ingreses 5 numeros")
 
 function promedio(){
-    let num1 = parseInt(prompt("Ingresa el primer numero:")), 
-        num2 = parseInt(prompt("Ingrese el segundo numero:")),
-        num3 = parseInt(prompt("Ingresa el tercer numero:")),
-        num4 = parseInt(prompt("Ingresa el cuarto numero:")),
-        num5 = parseInt(prompt("Ingresa el quinto y ultimo numero:"));
+    let suma = 0;
+    let cantidadNumeros = 5;
 
-    if (isNaN(num1 && num2 && num3 && num4 && num5)){
-    return "No ingresaste la totalidad de los numeros";
-    } else{
-        return (num1+num2+num3+num4+num5)/5
+    for(let i = 0; i < cantidadNumeros; i++){
+        let numero = parseFloat(prompt("Ingresa el numero " + (i+1) + ":"))
+        while (isNaN(numero)){
+            numero = parseFloat(prompt("Ingresa el numero " + (i+1) + ":"))
+            console.log("No ingresaste un numero, por favor intenta de nuevo.");
+        }
+
+        suma += numero;
+        console.log("Numero " + (i+1) + ":" + numero);
+
     }
-    
+
+    let promedio = suma / cantidadNumeros
+    console.log ("El promedio de los numeroes ingresados es: " + promedio);
 }
 
-console.log("El promedio de los numeros ingresados es: " + promedio())
+promedio();
+

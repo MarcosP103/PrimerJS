@@ -50,7 +50,7 @@ let quieroAgregar = prompt("Si quieres agregar un nuevo articulo digita Y de lo 
 while(quieroAgregar == "y" && "Y"){
     function agregarMerchandising(){
         let nombre = prompt("Ingresa el nombre del articulo.")
-        let precio = parseInt(prompt("Ingresa cual es el costo."))
+        let precio = parseFloat(prompt("Ingresa cual es el costo."))
         let stock = parseInt(prompt("Ingresa con cuanto stock dispones."))
         let talles = parseInt(prompt("Ingresa con cuantas posibilidades de talles te encuentras."))
 

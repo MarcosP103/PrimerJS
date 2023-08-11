@@ -11,14 +11,14 @@ const Merchandising = function(nombre, precio, stock, talles){
     this.talles = talles;
 }
 
-let producto1 = new Merchandising("remera 1", 25, 500, 5)
-let producto2 = new Merchandising("remera 2", 25, 500, 5)
-let producto3 = new Merchandising("remera 3", 27, 450, 5)
-let producto4 = new Merchandising("remera 4", 27, 400, 6)
-let producto5 = new Merchandising("campera 5", 35, 200, 6)
-let producto6 = new Merchandising("campera 6", 35, 200, 6)
+let prod1 = new Merchandising("remera 1", 25, 500, 5)
+let prod2 = new Merchandising("remera 2", 25, 500, 5)
+let prod3 = new Merchandising("remera 3", 27, 450, 5)
+let prod4 = new Merchandising("remera 4", 27, 400, 6)
+let prod5 = new Merchandising("campera 5", 35, 200, 6)
+let prod6 = new Merchandising("campera 6", 35, 200, 6)
 
-let lista = [producto1, producto2, producto3, producto4, producto5, producto6]
+let lista = [prod1, prod2, prod3, prod4, prod5, prod6]
 
 let comienzoBusqueda = parseInt(prompt("Si quieres comenzar con la busqueda digita 1 de lo contrario digita 0"));
 

@@ -1,72 +1,170 @@
 
-let nombreUsuario = prompt ("Hola, dime tu nombre por favor.")
+//let nombreUsuario = prompt ("Hola, dime tu nombre por favor.");
 
-alert ("Bienvenido " + nombreUsuario.toUpperCase() + ".")
-alert ("Este es un simulador donde podras buscar un articulo y si lo deseas agregar nuevos")
+//alert ("Bienvenido " + nombreUsuario.toUpperCase() + ".");
 
-const Merchandising = function(nombre, precio, stock, talles){
-    this.nombre = nombre;
-    this.precio = precio;
-    this.stock = stock;
-    this.talles = talles;
+const Merch = function(nombre,precio,stock, size){
+    this.nombre= nombre,
+    this.precio = precio
+    this. stock = stock
+    this.size = size
 }
 
-let prod1 = new Merchandising("remera 1", 25, 500, 5)
-let prod2 = new Merchandising("remera 2", 25, 500, 5)
-let prod3 = new Merchandising("remera 3", 27, 450, 5)
-let prod4 = new Merchandising("remera 4", 27, 400, 6)
-let prod5 = new Merchandising("campera 5", 35, 200, 6)
-let prod6 = new Merchandising("campera 6", 35, 200, 6)
+let prod1= new Merch ("remera 1", 25, 500, 4)
+let prod2= new Merch ("remera 2", 25, 500, 4)
+let prod3= new Merch ("remera 3", 27, 450, 4)
+let prod4= new Merch ("remera 4", 27, 230, 4)
+let prod5= new Merch ("remera 5", 35, 350, 4)
+let prod6= new Merch ("remera 6", 35, 300, 4)
+let prod7= new Merch ("taza 1", 15, 100, 250)
+let prod8= new Merch ("taza 2", 17, 75, 500)
 
-let lista = [prod1, prod2, prod3, prod4, prod5, prod6]
+let bDD = [prod1, prod2, prod3, prod4, prod5, prod6, prod7, prod8]
 
-let comienzoBusqueda = parseInt(prompt("Si quieres comenzar con la busqueda digita 1 de lo contrario digita 0"));
-
-while(comienzoBusqueda >= 1){
-
-	function filtrarProducto(){
-		let busqueda = prompt("Escribe lo que estas buscando")
-		let resultado = lista.filter( (articulo)=> articulo.nombre.includes(busqueda))
-
-		if(resultado.length > 0){
-			console.table(resultado)
-		} else{
-			alert ("No se encontró ninguna coincidencia con: " + busqueda)
-			console.log("Buscaste: " + busqueda)
-		}
-	}	
-
-	console.log(filtrarProducto())
-
- comienzoBusqueda = parseInt(prompt("La busqueda ha finalizado, ingresa 0 para salir o 1 para empezar una nueva."));
-
+if (localStorage.getItem("articulos")) {
+  bDD = JSON.parse(localStorage.getItem("articulos"));
+} else {
+  bDD = bDD
 }
 
-alert ("En este momento momento puedes optar por agregar nuevos articulos a la lista de Merchandising")
+function buscarMerch() { 
+  const body = document.querySelector('body');
 
+  const input = document.getElementById('inputBuscar').value  //traigo el valor del imput
 
-let quieroAgregar = prompt("Si quieres agregar un nuevo articulo digita Y de lo contrario ingresa otra letra")
+  const busqueda = input.trim().toUpperCase();
 
-while(quieroAgregar == "y" && "Y"){
-    function agregarMerchandising(){
-        let nombre = prompt("Ingresa el nombre del articulo.")
-        let precio = parseFloat(prompt("Ingresa cual es el costo."))
-        let stock = parseInt(prompt("Ingresa con cuanto stock dispones."))
-        let talles = parseInt(prompt("Ingresa con cuantas posibilidades de talles te encuentras."))
+  const resultado = bDD.filter((articulo) => articulo.nombre.toUpperCase().includes(busqueda));
 
-        if (nombre === "" || isNaN(precio) || isNaN(stock) || isNaN(talles)){
-            alert ("No ingresaste los datos correctos prueba de nuevo.")
-            return
-        }
+  if (resultado.length > 0) {
+    const container = document.createElement('div');
+    container.classList.add('card-container');
 
-        let articulo = new Merchandising(nombre, precio, stock, talles)
-        lista.push(articulo)
+    resultado.forEach((articulo) => {
+      const card = document.createElement('div');
+      card.classList.add('card');
 
-        console.table(lista)
-    }
+      const nombre = document.createElement('h2');
+      nombre.textContent = articulo.nombre;
+      card.appendChild(nombre);
 
-    console.log(agregarMerchandising())
+      const precio = document.createElement('p');
+      precio.textContent = `Precio: ${articulo.precio}`;
+      card.appendChild(precio);
 
-    quieroAgregar = prompt("Deseas seguir agregando?");
+      const stock = document.createElement('p');
+      stock.textContent = `Stock: ${articulo.stock}`;
+      card.appendChild(stock);
 
+      const size = document.createElement('p');
+      size.textContent = `Size: ${articulo.size}`;
+      card.appendChild(size);
+
+      container.appendChild(card);
+    });
+
+    body.appendChild(container);
+  } else {
+    alert('No se encontraron coincidencias');
+  }
 }
+
+function agregarMerch() {
+	const form = document.createElement('form');
+	form.innerHTML = `
+	  <label for="nombre-input">Nombre:</label>
+	  <input id="nombre-input" type="text" required>
+	  
+	  <label for="precio-input">Precio:</label>
+	  <input id="precio-input" type="number" step="0.01" required>
+	  
+	  <label for="stock-input">Stock:</label>
+	  <input id="stock-input" type="number" step="1" required>
+  
+	  <label for="size-input">Size:</label>
+	  <input id="size-input" required>
+	  
+	  <button type="submit">Agregar</button>
+	`;
+  
+	form.addEventListener('submit', function (event) {
+	  event.preventDefault();
+  
+	  const nombreInput = document.getElementById('nombre-input').value.trim();
+	  const precioInput = parseFloat(document.getElementById('precio-input').value);
+	  const stockInput = parseInt(document.getElementById('stock-input').value);
+	  const sizeInput = document.getElementById('size-input').value.trim();
+  
+	  if (isNaN(precioInput) || isNaN(stockInput) || nombreInput === '' || sizeInput === '') {
+		alert('Por favor ingresa valores válidos.');
+		return;
+	  }
+  
+	  const merch = new Merch(nombreInput, precioInput, stockInput, sizeInput);
+  
+	  if (bDD.some((elemento) => elemento.nombre === merch.nombre)) {
+		alert('Ese articulo ya existe en la base de datos.');
+		return;
+	  }
+  
+	  bDD.push(merch);
+  
+  
+	  localStorage.setItem("articulos", JSON.stringify(bDD));
+  
+	  alert(`Se ha agregado el articulo "${merch.nombre}" a la base de datos.`);
+  
+	  console.table(bDD);
+  
+	  const container = document.createElement('div');
+	  container.classList.add('card-container');
+  
+	  bDD.forEach((articulo) => {
+		const card = document.createElement('div');
+		card.classList.add('card');
+  
+		const nombre = document.createElement('h2');
+		nombre.textContent = articulo.nombre;
+		card.appendChild(nombre);
+  
+		const precio = document.createElement('p');
+		precio.textContent = `Precio: ${articulo.precio}`;
+		card.appendChild(precio);
+  
+		const stock = document.createElement('p');
+		stock.textContent = `Stock: ${articulo.stock}`;
+		card.appendChild(stock);
+  
+		const size = document.createElement('p');
+		size.textContent = `Size: ${articulo.size}`;
+		card.appendChild(size);
+  
+		container.appendChild(card);
+	  });
+  
+	  const body = document.querySelector('body');
+	  body.appendChild(container);
+  
+	  form.reset();
+	});
+  
+	const body = document.querySelector('body');
+	body.appendChild(form);
+  }
+
+bDD.sort((a, b) => a.precio - b.precio);
+	console.table(bDD);
+
+	const filtrarBtn = document.getElementById("botonBuscar");
+		filtrarBtn.addEventListener("click", () => {
+			buscarMerch();
+		});
+
+	const agregarBtn = document.getElementById("botonAgregar");
+		agregarBtn.addEventListener("click", () => {
+			agregarMerch();
+		});
+
+	const ordenarBtn = document.getElementById("ordenar");
+
+//console.log(agregarMerchandising())

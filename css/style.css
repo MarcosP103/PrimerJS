@@ -29,3 +29,28 @@
     font-size: 25px;
     color: black;
 }
+
+.botones{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.botones #inputBuscar{
+    border: solid blue;
+    padding: 10px;
+    margin: 5px;
+}
+
+.botones #botonBuscar{
+    padding: 10px;
+    margin: 5px;
+    color: black;
+}
+
+.botones #botonAgregar{
+    padding: 10px;
+    margin: 5px;
+
+}

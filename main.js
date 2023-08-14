@@ -3,7 +3,7 @@
 
 //alert ("Bienvenido " + nombreUsuario.toUpperCase() + ".");
 
-const Merch = function(nombre,precio,stock, size){
+const Merch = function(nombre, precio, stock, size){
     this.nombre= nombre,
     this.precio = precio
     this. stock = stock
@@ -30,7 +30,7 @@ if (localStorage.getItem("articulos")) {
 function buscarMerch() { 
   const body = document.querySelector('body');
 
-  const input = document.getElementById('inputBuscar').value  //traigo el valor del imput
+  const input = document.getElementById('inputBuscar').value 
 
   const busqueda = input.trim().toUpperCase();
 

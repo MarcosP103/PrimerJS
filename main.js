@@ -1,6 +1,6 @@
 
-let nombreUsuario = prompt ("Buenas!! dime tu nombre.");
-alert ("Bienvenido " + nombreUsuario.toUpperCase() + ".");
+// let nombreUsuario = prompt ("Buenas!! dime tu nombre.");
+// alert ("Bienvenido " + nombreUsuario.toUpperCase() + ".");
 
 const Merch = function(nombre, precio, stock, size){
     this.nombre= nombre,
@@ -66,11 +66,13 @@ function buscarMerch() {
     });
 
     contSearch.appendChild(container);
-	searchContainer.reset();
   } else {
     alert('No se encontraron coincidencias');
+	searchContainer.innerHTML = "";
   }
 }
+
+
 
 let contNew = document.getElementById('newContainer')
 

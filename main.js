@@ -29,7 +29,8 @@ localStorage.getItem("articulos") ? bDD = JSON.parse(localStorage.getItem("artic
 
 const contSearch = document.getElementById('searchContainer');
 
-function buscarMerch() { 
+function buscarMerch() {
+	searchContainer.innerHTML = ""; //reset contenedor
   const body = document.querySelector('body');
 
   const input = document.getElementById('inputBuscar').value 

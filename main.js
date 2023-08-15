@@ -25,8 +25,6 @@ let bDD = [prod1, prod2, prod3, prod4, prod5, prod6, prod7, prod8, prod9, prod10
 
 localStorage.getItem("articulos") ? bDD = JSON.parse(localStorage.getItem("articulos")) : bDD = bDD
 
-
-
 const contSearch = document.getElementById('searchContainer');
 
 function buscarMerch() {
@@ -72,8 +70,6 @@ function buscarMerch() {
 	searchContainer.innerHTML = "";
   }
 }
-
-
 
 let contNew = document.getElementById('newContainer')
 

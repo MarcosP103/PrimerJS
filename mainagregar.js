@@ -1,78 +1,9 @@
 
-let nombreUsuario = prompt ("Buenas!! dime tu nombre.");
-alert ("Bienvenido " + nombreUsuario.toUpperCase() + ".");
+let contrasena = prompt ("buenas! por favor para ingresar ingreasa la contraseña adecuada");
 
-const Merch = function(nombre, precio, stock, size){
-    this.nombre= nombre,
-    this.precio = precio
-    this. stock = stock
-    this.size = size
-}
-
-let prod1= new Merch ("remera 1", 25, 500, 4)
-let prod2= new Merch ("remera 2", 25, 500, 4)
-let prod3= new Merch ("remera 3", 27, 450, 4)
-let prod4= new Merch ("remera 4", 27, 230, 4)
-let prod5= new Merch ("remera 5", 35, 350, 4)
-let prod6= new Merch ("remera 6", 35, 300, 4)
-let prod7= new Merch ("taza 1", 15, 100, 250)
-let prod8= new Merch ("taza 2", 17, 75, 250)
-let prod9= new Merch ("jarra 1", 15, 100, 500)
-let prod10= new Merch ("jarra 2", 17, 75, 500)
-
-let bDD = [prod1, prod2, prod3, prod4, prod5, prod6, prod7, prod8, prod9, prod10]
-
-
-localStorage.getItem("articulos") ? bDD = JSON.parse(localStorage.getItem("articulos")) : bDD = bDD
-
-
-
-const contSearch = document.getElementById('searchContainer');
-
-function buscarMerch() { 
-  const body = document.querySelector('body');
-
-  const input = document.getElementById('inputBuscar').value 
-
-  const busqueda = input.trim().toUpperCase();
-
-  const resultado = bDD.filter((articulo) => articulo.nombre.toUpperCase().includes(busqueda));
-
-  if (resultado.length > 0) {
-    const container = document.createElement('div');
-    container.classList.add('contenedor');
-
-    resultado.forEach((articulo) => {
-      const card = document.createElement('div');
-      card.classList.add('card');
-
-      const nombre = document.createElement('h2');
-      nombre.textContent = articulo.nombre;
-      card.appendChild(nombre);
-
-      const precio = document.createElement('p');
-      precio.textContent = `Precio: ${articulo.precio}`;
-      card.appendChild(precio);
-
-      const stock = document.createElement('p');
-      stock.textContent = `Stock: ${articulo.stock}`;
-      card.appendChild(stock);
-
-      const size = document.createElement('p');
-      size.textContent = `Size: ${articulo.size}`;
-      card.appendChild(size);
-
-      container.appendChild(card);
-    });
-
-    contSearch.appendChild(container);
-	searchContainer.reset();
-  } else {
-    alert('No se encontraron coincidencias');
-  }
-}
-
-let contNew = document.getElementById('newContainer')
+if (contrasena = "123456"){
+    alert('Bienvenido!');
+    let contNew = document.getElementById('newContainer')
 
 function agregarMerch() {
 	const form = document.createElement('form');
@@ -166,5 +97,9 @@ bDD.sort((a, b) => a.precio - b.precio);
 		agregarBtn.addEventListener("click", () => {
 			agregarMerch();
 		});
+} else{
+    <script type="text/javascript">
+   window.location.href = "index.html";
+</script>
+}
 
-//console.log(agregarMerchandising())

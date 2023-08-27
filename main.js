@@ -1,11 +1,9 @@
 
-// let nombreUsuario = prompt ("Buenas!! dime tu nombre.");
-// alert ("Bienvenido " + nombreUsuario.toUpperCase() + ".");
 
 const Merch = function(nombre, precio, stock, size){
     this.nombre= nombre,
     this.precio = precio
-    this. stock = stock
+    this.stock = stock
     this.size = size
 }
 
@@ -61,6 +59,13 @@ function buscarMerch() {
       size.textContent = `Size: ${articulo.size}`;
       card.appendChild(size);
 
+	  const boton = document.createElement('button');
+	  boton.type = 'button'; boton.id = "botonCarrito"
+	  boton.addEventListener("click", () => {
+		resultado();});
+	  boton.innerText = 'Al Carrito!';
+	  card.appendChild(boton);
+
       container.appendChild(card);
     });
 
@@ -74,6 +79,8 @@ function buscarMerch() {
 let contNew = document.getElementById('newContainer')
 
 function agregarMerch() {
+	newContainer.innerHTML = "";
+
 	const form = document.createElement('form');
 	form.innerHTML = `
 	  <label id="labels" for="nombre-input">Nombre:</label>
@@ -165,5 +172,3 @@ bDD.sort((a, b) => a.precio - b.precio);
 		agregarBtn.addEventListener("click", () => {
 			agregarMerch();
 		});
-
-//console.log(agregarMerchandising())

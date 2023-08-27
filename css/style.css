@@ -100,3 +100,28 @@ form #agregarForm{
     margin: 10px;
 }
 
+#botonCarrito{
+    width: 100px;
+    display: flex;
+    align-self: center;
+}
+
+
+
+.tazasJarras{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    grid-auto-rows: minmax(10px, auto);
+    align-content: center;
+    justify-content: center;
+}
+
+.remeras{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    grid-auto-rows: minmax(10px, auto);
+    align-content: center;
+    justify-content: center;
+}

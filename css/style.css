@@ -12,23 +12,21 @@ body{
 }
 
 .div{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
 }
+
 .div h1{
+    position: absolute;
     margin-top: 50px;
+    left: 150px;
     font-size: 50px;
-    color: black;
+    color: white
 }
-.div h3{
-    margin-top: 50px;
-    padding: 10px;
-    font-size: 25px;
-    color: black;
-    align-content: center;
+.imagenfondo{
+    width: auto;
 }
 
 .botones{
@@ -101,7 +99,7 @@ form #agregarForm{
 }
 
 #botonCarrito{
-    width: 100px;
+    width: 80%;
     display: flex;
     align-self: center;
 }
@@ -125,3 +123,18 @@ form #agregarForm{
     align-content: center;
     justify-content: center;
 }
+
+
+.iconocarrito{
+    width: 25px;
+    position: relative;
+}
+.contador-productos{
+    position: absolute;
+    background-color: black;
+    color: whitesmoke;
+}
+.iconox{
+    width: 15px;
+}
+

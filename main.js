@@ -1,5 +1,4 @@
 
-
 const Merch = function(nombre, precio, stock, size){
     this.nombre= nombre,
     this.precio = precio
@@ -19,7 +18,6 @@ let prod9= new Merch ("jarra 1", 15, 100, 500)
 let prod10= new Merch ("jarra 2", 17, 75, 500)
 
 let bDD = [prod1, prod2, prod3, prod4, prod5, prod6, prod7, prod8, prod9, prod10]
-
 
 localStorage.getItem("articulos") ? bDD = JSON.parse(localStorage.getItem("articulos")) : bDD = bDD
 
@@ -62,7 +60,7 @@ function buscarMerch() {
 	  const boton = document.createElement('button');
 	  boton.type = 'button'; boton.id = "botonCarrito"
 	  boton.addEventListener("click", () => {
-		resultado();});
+		alert('funciona')});
 	  boton.innerText = 'Al Carrito!';
 	  card.appendChild(boton);
 
@@ -172,3 +170,4 @@ bDD.sort((a, b) => a.precio - b.precio);
 		agregarBtn.addEventListener("click", () => {
 			agregarMerch();
 		});
+

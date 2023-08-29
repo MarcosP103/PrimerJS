@@ -125,16 +125,57 @@ form #agregarForm{
 }
 
 
-.iconocarrito{
-    width: 25px;
-    position: relative;
+.container-icon{
+    position:  relative;
 }
-.contador-productos{
+.count-products{
     position: absolute;
+    top: 30%;
+    margin-left: 13px;
     background-color: black;
     color: whitesmoke;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+.iconocarrito{
+    width: 25px;
+}
+.container-cart-products{
+    position: absolute;
+    top: 40px;
+    right: 5;
+    background-color: white;
+    width: 300px;
+    z-index: 1;
+
+
+}
+.cart-product{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+}
+.info-cart-product{
+    display: flex;
+    justify-content: space-between;
+    flex: 0.8;
+}
+
+.cantidad-producto-carrito{
+
+}
+.titulo-producto-carrito{
+
+}
+.precio-producto-carrito{
+    
 }
 .iconox{
-    width: 15px;
+    width: 25px;
+    height: 25px;
 }
 

@@ -1,3 +1,13 @@
+const btnCarrito = document.querySelector('.container-cart-icon')
+const contCarritoProductos = document.querySelector('.container-cart-products')
+
+btnCarrito.addEventListener('click', () => {
+	contCarritoProductos.classList.toggle('hidden-cart')
+})
+
+const carritoProducto = document.querySelector('.cart-product')
+
+
 
 const Merch = function(nombre, precio, stock, size){
     this.nombre= nombre,

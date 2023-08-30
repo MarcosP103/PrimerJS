@@ -6,7 +6,7 @@
 body{
     background: linear-gradient(#716dbd, #32b5d0);
 }
-.main {
+.mainindex {
     background: linear-gradient(#716dbd, #32b5d0);
     height: 100%;
 }
@@ -106,7 +106,7 @@ form #agregarForm{
 
 
 
-.tazasJarras{
+.contenedorcardhtml{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
@@ -114,16 +114,6 @@ form #agregarForm{
     align-content: center;
     justify-content: center;
 }
-
-.remeras{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
-    grid-auto-rows: minmax(10px, auto);
-    align-content: center;
-    justify-content: center;
-}
-
 
 .container-icon{
     position:  relative;

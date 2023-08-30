@@ -104,13 +104,12 @@ form #agregarForm{
     align-self: center;
 }
 
-
-
 .contenedorcardhtml{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
     grid-auto-rows: minmax(10px, auto);
+    margin: 10px;
     align-content: center;
     justify-content: center;
 }
@@ -184,7 +183,7 @@ form #agregarForm{
     font-weight: 900;
 }
 
-.hidden-cart{
+.hiddencart{
     display: none;
 }
 .iconox{

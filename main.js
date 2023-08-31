@@ -82,7 +82,12 @@ function buscarMerch() {
 
     contSearch.appendChild(container);
   } else {
-    alert('No se encontraron coincidencias');
+    Swal.fire({
+		title: 'No se encontraron coincidencias',
+		icon: 'error',
+		timer: 2000 
+	  });
+  
 	searchContainer.innerHTML = "";
   }
 }
@@ -118,21 +123,34 @@ function agregarMerch() {
 	  const sizeInput = document.getElementById('size-input').value.trim();
   
 	  if (isNaN(precioInput) || isNaN(stockInput) || nombreInput === '' || sizeInput === '') {
-		alert('Por favor ingresa valores válidos.');
+		Swal.fire({
+			title: 'Por favor ingresa valores validos.',
+			icon: 'error',
+			timer: 2000 
+		  }); 
 		return;
 	  }
   
 	  const merch = new Merch(nombreInput, precioInput, stockInput, sizeInput);
   
 	  if (bDD.some((elemento) => elemento.nombre === merch.nombre)) {
-		alert('Ese articulo ya existe en la base de datos.');
+		Swal.fire({
+			title: 'Ya existe el articulo',
+			icon: 'error',
+			timer: 2000 
+		  });
 		return;
 	  }
   
 	  bDD.push(merch);
     
 	  localStorage.setItem("articulos", JSON.stringify(bDD));
-  	  alert(`Se ha agregado el articulo "${merch.nombre}" a la base de datos.`);
+	  Swal.fire({
+		title: 'Agregado al localStorage!',
+		icon: 'success',
+		timer: 2000 
+	  });
+  
   
 	  console.table(bDD);
   
@@ -197,6 +215,7 @@ bDD.sort((a, b) => a.precio - b.precio);
 		let listaProductos = document.querySelector('.contenedorcardhtml');
 		
 		let todosProductos = [];
+		localStorage.getItem("carrito") ? todosProductos = JSON.parse(localStorage.getItem("carrito")) : todosProductos = todosProductos;
 		
 		const valorTotal =  document.querySelector('.total-pagar');
 		const contador = document.querySelector('#contador-productos');
@@ -233,7 +252,7 @@ bDD.sort((a, b) => a.precio - b.precio);
 				}else{
 					todosProductos = [...todosProductos, infoProducto];
 				}
-		
+				localStorage.setItem('carrito', JSON.stringify(todosProductos))		
 				muestraHtml();
 			}
 		
@@ -251,6 +270,7 @@ bDD.sort((a, b) => a.precio - b.precio);
 					title: 'Eliminaste este articulo del carrito',
 					icon: 'error',
 				});
+
 		
 				muestraHtml()
 			}
@@ -295,3 +315,9 @@ bDD.sort((a, b) => a.precio - b.precio);
 			valorTotal.innerText = `$${total}`;
 			contador.innerText = totalProductos;
 		}
+		if (todosProductos) {
+			muestraHtml();
+		}
+
+//API
+

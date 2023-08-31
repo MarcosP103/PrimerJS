@@ -26,26 +26,33 @@ body{
     color: white
 }
 .imagenfondo{
-    width: auto;
+    width: 100%;
 }
 
 .botones{
+    position: absolute;
+    margin-top: -100px;
+    margin-left: 100px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
 }
 .botones #inputBuscar{
-    border: solid blue;
+    border-radius: 10px;
+    border: solid rgb(67, 67, 110);
     padding: 10px;
     margin: 5px;
 }
 .botones #botonBuscar{
+    border-radius: 10px;
+    border: solid rgb(49, 38, 38);
     padding: 10px;
     margin: 5px;
-    color: black;
 }
 .botones #botonAgregar{
+    border-radius: 10px;
+    border: solid rgb(49, 38, 38);
     padding: 10px;
     margin: 5px;
 }
@@ -151,7 +158,7 @@ form #agregarForm{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px;
+    padding: 10px;
     border-bottom: 1px solid;
 }
 .info-cart-product{
@@ -161,17 +168,18 @@ form #agregarForm{
 }
 .cantidad-producto-carrito{
     font-weight: 400;
-    font-size: 20px;
+    font-size: 17px;
 }
 .titulo-producto-carrito{
-    font-size: 20;
+    font-weight: 400;
+    font-size: 17px;
 }
 .precio-producto-carrito{
     font-weight: 700;
-    font-size: 20px;
+    font-size: 17px;
     margin-left: 10px;
 }
-.cart-total{
+.carritototal{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -193,5 +201,10 @@ form #agregarForm{
 .iconox:hover{
     stroke: bisque;
     cursor: pointer;
+}
+
+.carritovacio{
+    padding: 20px;
+    text-align: center;
 }
 

@@ -221,7 +221,10 @@ form #agregarForm {
     font-weight: 900;
 }
 
-.hiddencart {
+.hidden-cart {
+    display: none;
+}
+.hidden{
     display: none;
 }
 

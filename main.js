@@ -280,7 +280,6 @@ rowProducto.addEventListener('click', c => {
 		
 const muestraHtml = () => {
 
-	//let cv = document.getElementsByClassName('hidden').length != 0 ? hidden : carritoVacio
 	if(!todosProductos.length){
 		carritoVacio.classList.remove('hidden');	
 		rowProducto.classList.add('hidden');

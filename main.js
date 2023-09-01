@@ -84,7 +84,7 @@ function buscarMerch() {
   } else {
     Swal.fire({
 		title: 'No se encontraron coincidencias',
-		icon: 'error',
+		icon: 'warning',
 		timer: 2000 
 	  });
   
@@ -125,7 +125,7 @@ function agregarMerch() {
 	  if (isNaN(precioInput) || isNaN(stockInput) || nombreInput === '' || sizeInput === '') {
 		Swal.fire({
 			title: 'Por favor ingresa valores validos.',
-			icon: 'error',
+			icon: 'warning',
 			timer: 2000 
 		  }); 
 		return;
@@ -193,14 +193,18 @@ bDD.sort((a, b) => a.precio - b.precio);
 	console.table(bDD);
 
 	const filtrarBtn = document.getElementById("botonBuscar");
+	if (filtrarBtn) {
 		filtrarBtn.addEventListener("click", () => {
 			buscarMerch();
 		});
-
+	}
+		
 	const agregarBtn = document.getElementById("botonAgregar");
+	if (agregarBtn) {
 		agregarBtn.addEventListener("click", () => {
 			agregarMerch();
 		});
+	}
 
 		const btnCarrito = document.querySelector('.container-cart-icon');
 		const contCarritoProductos = document.querySelector('.container-cart-products');
@@ -268,7 +272,7 @@ bDD.sort((a, b) => a.precio - b.precio);
 				);
 				Swal.fire({
 					title: 'Eliminaste este articulo del carrito',
-					icon: 'error',
+					icon: 'warning',
 				});
 
 		
@@ -292,10 +296,13 @@ bDD.sort((a, b) => a.precio - b.precio);
 		
 			let total = 0;
 			let totalProductos = 0;
+
+			let cruz = document.getElementsByClassName('index').length != 0 ? "assets/x.png" : "../assets/x.png"
 		
 			todosProductos.forEach(producto => {
 				const contenedorProducto = document.createElement('div');
 				contenedorProducto.classList.add('cart-product');
+
 		
 				contenedorProducto.innerHTML = `
 				<div class="info-cart-product">
@@ -303,7 +310,7 @@ bDD.sort((a, b) => a.precio - b.precio);
 					<p class="titulo-producto-carrito">${producto.title}</p>
 					<span class="precio-producto-carrito">${producto.price}</span>
 				</div>
-				  <img class="iconox" src="../assets/x.png">
+				  <img class="iconox" src=${cruz}>
 				`;
 		
 				rowProducto.append(contenedorProducto);

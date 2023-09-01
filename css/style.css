@@ -84,25 +84,33 @@ form{
 }
 
 #labels{
+    border-radius: 10px;
+    border: solid rgb(67, 67, 110);
     margin: 10px;
     font-size: 20px;
-    padding: 10px;
 }
 #nombre-input{
-    border: solid black 2px;
+    border-radius: 10px;
+    border: solid rgb(67, 67, 110);
 }
 #precio-input{
-    border: solid black 2px;
+    border-radius: 10px;
+    border: solid rgb(67, 67, 110);
 }
 #stock-input{
-    border: solid black 2px;
+    border-radius: 10px;
+    border: solid rgb(67, 67, 110);
 }
 #size-input{
-    border: solid black 2px;
+    border-radius: 10px;
+    border: solid rgb(67, 67, 110);
 }
 
 form #agregarForm{
     margin: 10px;
+    border-radius: 10px;
+    border: solid rgb(67, 67, 110);
+    font-size: 20px;
 }
 
 #botonCarrito{
@@ -207,4 +215,3 @@ form #agregarForm{
     padding: 20px;
     text-align: center;
 }
-

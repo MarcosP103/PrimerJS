@@ -210,7 +210,7 @@ const btnCarrito = document.querySelector('.container-cart-icon');
 const contCarritoProductos = document.querySelector('.container-cart-products');
 		
 btnCarrito.addEventListener('click', () => {
-		contCarritoProductos.classList.toggle('hiddencart')
+		contCarritoProductos.classList.toggle('hidden-cart')
 });
 		
 const carritoProducto = document.querySelector('.cart-product');
@@ -279,16 +279,14 @@ rowProducto.addEventListener('click', c => {
 })
 		
 const muestraHtml = () => {
+
+	//let cv = document.getElementsByClassName('hidden').length != 0 ? hidden : carritoVacio
 	if(!todosProductos.length){
-		if(carritoVacio){
-			carritoVacio.classList.remove('hidden');
-		}		
+		carritoVacio.classList.remove('hidden');	
 		rowProducto.classList.add('hidden');
 		carritoTotal.classList.add('hidden');
 	}else{
-		if(carritoVacio){
-			carritoVacio.classList.add('hidden');
-		}
+		carritoVacio.classList.add('hidden');
 		rowProducto.classList.remove('hidden');
 		carritoTotal.classList.remove('hidden');
 	}

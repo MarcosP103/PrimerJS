@@ -280,11 +280,15 @@ rowProducto.addEventListener('click', c => {
 		
 const muestraHtml = () => {
 	if(!todosProductos.length){
-		carritoVacio.classList.remove('hidden');
+		if(carritoVacio){
+			carritoVacio.classList.remove('hidden');
+		}		
 		rowProducto.classList.add('hidden');
 		carritoTotal.classList.add('hidden');
 	}else{
-		carritoVacio.classList.add('hidden');
+		if(carritoVacio){
+			carritoVacio.classList.add('hidden');
+		}
 		rowProducto.classList.remove('hidden');
 		carritoTotal.classList.remove('hidden');
 	}
@@ -419,7 +423,6 @@ weatherWidget.init = function (settings) {
             }
             counter++;
         };
-
     });
 };
 
@@ -483,4 +486,3 @@ let widget = Object.create(weatherWidget);
 widget.init({
   city_name: 'Montevideo'
 });
-

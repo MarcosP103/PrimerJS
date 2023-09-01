@@ -1,35 +1,38 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     background: linear-gradient(#716dbd, #32b5d0);
 }
+
 .mainindex {
     background: linear-gradient(#716dbd, #32b5d0);
     height: 100%;
 }
 
-.div{
+.div {
     position: relative;
     display: inline-block;
     text-align: center;
     width: 100%;
 }
 
-.div h1{
+.div h1 {
     position: absolute;
     margin-top: 50px;
     left: 150px;
     font-size: 50px;
     color: white
 }
-.imagenfondo{
+
+.imagenfondo {
     width: 100%;
 }
 
-.botones{
+.botones {
     position: absolute;
     margin-top: -100px;
     margin-left: 100px;
@@ -38,88 +41,96 @@ body{
     align-items: center;
     justify-content: center;
 }
-.botones #inputBuscar{
+
+.botones #inputBuscar {
     border-radius: 10px;
     border: solid rgb(67, 67, 110);
     padding: 10px;
     margin: 5px;
 }
-.botones #botonBuscar{
-    border-radius: 10px;
-    border: solid rgb(49, 38, 38);
-    padding: 10px;
-    margin: 5px;
-}
-.botones #botonAgregar{
+
+.botones #botonBuscar {
     border-radius: 10px;
     border: solid rgb(49, 38, 38);
     padding: 10px;
     margin: 5px;
 }
 
-.contenedor{
+.botones #botonAgregar {
+    border-radius: 10px;
+    border: solid rgb(49, 38, 38);
+    padding: 10px;
+    margin: 5px;
+}
+
+.contenedor {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     flex-direction: column;
     align-items: center;
 }
 
-#searchContainer{
+#searchContainer {
     align-items: center;
     padding: 10px;
 }
-#searchContainer div{
+
+#searchContainer div {
     margin: 10px;
 }
 
-form{
+form {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
 }
 
-#newContainer div{
+#newContainer div {
     margin: 5px;
 }
 
-#labels{
+#labels {
     border-radius: 10px;
     border: solid rgb(67, 67, 110);
     margin: 10px;
     font-size: 20px;
 }
-#nombre-input{
-    border-radius: 10px;
-    border: solid rgb(67, 67, 110);
-}
-#precio-input{
-    border-radius: 10px;
-    border: solid rgb(67, 67, 110);
-}
-#stock-input{
-    border-radius: 10px;
-    border: solid rgb(67, 67, 110);
-}
-#size-input{
+
+#nombre-input {
     border-radius: 10px;
     border: solid rgb(67, 67, 110);
 }
 
-form #agregarForm{
+#precio-input {
+    border-radius: 10px;
+    border: solid rgb(67, 67, 110);
+}
+
+#stock-input {
+    border-radius: 10px;
+    border: solid rgb(67, 67, 110);
+}
+
+#size-input {
+    border-radius: 10px;
+    border: solid rgb(67, 67, 110);
+}
+
+form #agregarForm {
     margin: 10px;
     border-radius: 10px;
     border: solid rgb(67, 67, 110);
     font-size: 20px;
 }
 
-#botonCarrito{
+#botonCarrito {
     width: 80%;
     display: flex;
     align-self: center;
 }
 
-.contenedorcardhtml{
+.contenedorcardhtml {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
@@ -129,11 +140,12 @@ form #agregarForm{
     justify-content: center;
 }
 
-.container-icon{
-    position:  relative;
-    
+.container-icon {
+    position: relative;
+
 }
-.count-products{
+
+.count-products {
     position: absolute;
     top: 30%;
     margin-left: 13px;
@@ -146,13 +158,16 @@ form #agregarForm{
     align-items: center;
     border-radius: 50%;
 }
-.iconocarrito{
+
+.iconocarrito {
     width: 25px;
 }
-.iconocarrito:hover{
+
+.iconocarrito:hover {
     cursor: pointer;
 }
-.container-cart-products{
+
+.container-cart-products {
     position: absolute;
     top: 40px;
     right: 5;
@@ -162,56 +177,65 @@ form #agregarForm{
     box-shadow: 0 10px 20px;
     border-radius: 10px;
 }
-.cart-product{
+
+.cart-product {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px;
     border-bottom: 1px solid;
 }
-.info-cart-product{
+
+.info-cart-product {
     display: flex;
     justify-content: space-between;
     flex: 0.8;
 }
-.cantidad-producto-carrito{
+
+.cantidad-producto-carrito {
     font-weight: 400;
     font-size: 17px;
 }
-.titulo-producto-carrito{
+
+.titulo-producto-carrito {
     font-weight: 400;
     font-size: 17px;
 }
-.precio-producto-carrito{
+
+.precio-producto-carrito {
     font-weight: 700;
     font-size: 17px;
     margin-left: 10px;
 }
-.carritototal{
+
+.carritototal {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 5px 0;
     gap: 20px;
 }
-.total-pagar{
+
+.total-pagar {
     font-size: 20px;
     font-weight: 900;
 }
 
-.hiddencart{
+.hiddencart {
     display: none;
 }
-.iconox{
+
+.iconox {
     width: 25px;
     height: 25px;
 }
-.iconox:hover{
+
+.iconox:hover {
     stroke: bisque;
     cursor: pointer;
 }
 
-.carritovacio{
+.carritovacio {
     padding: 20px;
     text-align: center;
 }
@@ -226,71 +250,101 @@ form #agregarForm{
     max-width: 500px;
     margin: 15px auto 0 auto;
 }
+
 .ow-row {
     position: relative;
     overflow: hidden;
     margin-bottom: 4%;
-  }
-  .ow-row:last-child {
+}
+
+.ow-row:last-child {
     margin-bottom: 0;
-  }
-  
-  .ow-ico {
+}
+
+.ow-ico {
     line-height: 1.1em;
-  }
-  
-  .ow-widget {
+}
+
+.ow-widget {
     background-color: #44b2e2;
     font-family: "Helvetica Neue", Helvetica, sans-serif;
     font-size: 16px;
     color: #ffffff;
     padding: 2%;
-    margin: 5px;
-  }
-  .ow-widget .pull-left {
+    border-radius: 10px;
+    border: solid #716dbd;
+}
+
+.ow-widget .pull-left {
     float: left;
-  }
-  .ow-widget .pull-right {
+}
+
+.ow-widget .pull-right {
     float: right;
-  }
-  
-  .ow-city-name {
+}
+
+.ow-city-name {
     letter-spacing: 1px;
     line-height: 1.111em;
     font-weight: bold;
     font-size: 24px;
-  }
-  
-  .ow-ico-current {
+}
+
+.ow-ico-current {
     font-size: 80px;
     width: 1.1em;
     padding-top: 13px;
-  }
-  
-  .ow-temp-current {
+}
+
+.ow-temp-current {
     font-size: 60px;
     margin: 0 10%;
-  }
-  
-  .ow-current-desc {
+}
+
+.ow-current-desc {
     line-height: 1.5em;
-  }
-  
-  .ow-forecast-item {
+}
+
+.ow-forecast-item {
     float: left;
     width: calc(25% - 1px);
     text-align: center;
     border-right: 1px solid white;
-  }
-  .ow-forecast-item:last-child {
+}
+
+.ow-forecast-item:last-child {
     border-right: 0;
-  }
-  .ow-forecast-item .ow-ico-forecast {
+}
+
+.ow-forecast-item .ow-ico-forecast {
     font-size: 30px;
     position: relative;
     margin: 10px 0;
-  }
-  .ow-forecast-item .ow-forecast-temp span {
+}
+
+.ow-forecast-item .ow-forecast-temp span {
     display: inline-block;
     margin: 0 5px;
-  }
+}
+
+/*footer*/
+
+.footer {
+    width: 100%;
+    background-color: black;
+    color: whitesmoke;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    padding: 5px 0;
+    margin-top: 20px;
+}
+
+.redes {
+    justify-content: space-between;
+    display: center;
+}
+
+.redes a {
+    padding: 10px;
+}
